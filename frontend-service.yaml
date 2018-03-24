@@ -6,9 +6,6 @@ metadata:
     app: guestbook
     tier: frontend
 spec:
-  # type: ClusterIP
-  #   ClusterIP provides a single IP address for the set of Pods the Service is pointing to. 
-  #   This IP address is accessible only within the cluster.
   # type: LoadBalancer
   #   LoadBalancer: automatically create an "external" load-balanced IP for the frontend service.
   type: NodePort

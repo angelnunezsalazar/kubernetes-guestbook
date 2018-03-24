@@ -7,8 +7,12 @@ metadata:
     role: slave
     tier: backend
 spec:
+  type: ClusterIP
+  #   ClusterIP provides a single IP address for the set of Pods the Service is pointing to. 
+  #   This IP address is accessible only within the cluster.
   ports:
   - port: 6379
+    targetPort: 6379
   selector:
     app: redis
     role: slave
