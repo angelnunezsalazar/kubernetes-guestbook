@@ -6,11 +6,17 @@ metadata:
     app: guestbook
     tier: frontend
 spec:
-  # if your cluster supports it, uncomment the following to automatically create
-  # an external load-balanced IP for the frontend service.
+  # type: ClusterIP
+  #   ClusterIP provides a single IP address for the set of Pods the Service is pointing to. 
+  #   This IP address is accessible only within the cluster.
   # type: LoadBalancer
+  #   LoadBalancer: automatically create an "external" load-balanced IP for the frontend service.
+  type: NodePort
+  #   NodePort allows to expose the service in a internal port that are shared across the entire cluster.
   ports:
+  # the port that this service should serve on
   - port: 80
+    nodePort: 30080
   selector:
     app: guestbook
     tier: frontend
